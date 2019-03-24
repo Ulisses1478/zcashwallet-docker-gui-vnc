@@ -64,6 +64,5 @@ RUN zcash-fetch-params
 
 USER 0
 
-ENTRYPOINT ["/dockerstartup/vnc_startup.sh"] & zcashd --daemon
-
+ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
 CMD ["--wait"]
