@@ -62,7 +62,10 @@ RUN $INST_SCRIPTS/set_user_permission.sh $STARTUPDIR $HOME
 RUN mkdir /headless/.zcash/ && touch /headless/.zcash/zcash.conf
 RUN zcash-fetch-params
 
+### parallel install
+RUN apt-get install -y parallel
+
 USER 0
 
-ENTRYPOINT ["/dockerstartup/vnc_startup.sh"]
-CMD ["--wait"]
+ENTRYPOINT parallel ::: /dockerstartup/vnc_startup.sh zcashd --daemon
+CMD zcashswingwallet&
