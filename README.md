@@ -40,6 +40,12 @@ If you want to put the files of the zcashwallet outside the container
 ```
 docker run -d -p 5901:5901 ulisses1478/zcashwallet
 ```
+## RUNNING ZCASH 
+To run zcash you need to open the terminal inside the vnc and run 
+```
+zcashd --daemon
+```
+After that just open the Zcashwallet on the desktop and will start to sync with blockchain
 
 ## Costumize the background image 
 
@@ -57,3 +63,4 @@ THE COMAND NEEDED TO BE RUN WHERE DOCKERFILE IS
 ```
 docker build -t <user>/<repo>:<tag> .
 ```
+
