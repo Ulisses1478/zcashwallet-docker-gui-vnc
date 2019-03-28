@@ -67,5 +67,5 @@ RUN apt-get install -y parallel
 
 USER 0
 
-ENTRYPOINT parallel ::: /dockerstartup/vnc_startup.sh zcashd --daemon
+ENTRYPOINT parallel ::: /dockerstartup/vnc_startup.sh zcashd --daemon zcashswingwallet
 CMD zcashswingwallet&
